@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  app-db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/database_password
+      - MYSQL_DATABASE_FILE=/run/secrets/database_name
+    expose:
+      - "3306"
+    secrets:
+      - database_name
+      - database_password
+
+secrets:
+  database_name:
+    file: ./secrets/DATABASE_NAME
+  database_password:
+    file: ./secrets/DATABASE_PASSWORD
