@@ -1,5 +1,17 @@
 version: "3.7"
 services:
+  app:
+    build: ./app
+    depends_on:
+    - app-db
+    volumes:
+      - ./src:/app
+    expose:
+      - "8080"
+    secrets:
+      - database_name
+      - database_password
+
   app-db:
     image: mariadb
     environment:

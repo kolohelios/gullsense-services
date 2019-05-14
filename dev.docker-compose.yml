@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: dev.Dockerfile
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/share/gullsense_services
+    ports:
+      - "8080:8080"
+
+  app-db:
+    ports:
+      - "3306:3306"

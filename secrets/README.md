@@ -1,6 +1,6 @@
 This folder should contain:
 
-DATABASE_NAME
-DATABASE_PASSWORD
+* DATABASE_NAME
+* DATABASE_PASSWORD
 
 which never get committed.
