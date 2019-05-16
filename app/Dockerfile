@@ -5,6 +5,7 @@ ADD . /usr/share/gullsense_services
 WORKDIR /usr/share/gullsense_services
 
 RUN npm i --production
+RUN ./node_modules/.bin/ts-node ./fuse.ts build
 ENV DATABASE_HOST gullsense-services_app-db_1
 ENV NODE_ENV production
 ENV PORT 8080

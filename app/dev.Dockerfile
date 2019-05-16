@@ -9,4 +9,4 @@ ENV PORT 8080
 
 EXPOSE 8080
 
-CMD [ "pm2-runtime", "start", "dev.ecosystem.config.js" ]
+CMD [ "pm2-runtime", "start", "ecosystem.dev.config.js" ]

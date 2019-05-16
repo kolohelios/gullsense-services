@@ -1,13 +1,16 @@
 module.exports = {
-  apps: [{
-    name: 'ingestor',
-    script: './node_modules/.bin/ts-node',
-    args: './ingestor/index.ts',
-    env: {
-      NODE_ENV: 'development',
+  apps: [
+    {
+      name: 'server',
+      // script: './node_modules/.bin/ts-node',
+      script: './build/compiled/server.js',
+      // args: './ingestor/index.ts',
+      env: {
+        NODE_ENV: 'development',
+      },
+      env_production: {
+        NODE_ENV: 'production',
+      },
     },
-    env_production: {
-      NODE_ENV: 'production',
-    }
-  }]
+  ],
 }

@@ -3,9 +3,9 @@ services:
   app:
     build: ./app
     depends_on:
-    - app-db
+      - app-db
     volumes:
-      - ./src:/app
+      - ./app:/app
     expose:
       - "8080"
     secrets:

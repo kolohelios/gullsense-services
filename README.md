@@ -14,3 +14,7 @@
 
 * `docker-compose -f docker-compose.yml -f dev.docker-compose.yml build`
 * `docker-compose -f docker-compose.yml -f dev.docker-compose.yml up -d`
+
+To stop services:
+
+`docker-compose stop`

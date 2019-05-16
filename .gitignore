@@ -1,3 +1,5 @@
 secrets/*
 !secrets/README.md
 node_modules/
+build/
+.fusebox/
