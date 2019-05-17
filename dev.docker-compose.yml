@@ -15,3 +15,7 @@ services:
   app-db:
     ports:
       - "3306:3306"
+
+  app-redis:
+    ports:
+      - "6379:6379"

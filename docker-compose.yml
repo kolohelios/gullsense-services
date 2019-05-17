@@ -24,6 +24,11 @@ services:
       - database_name
       - database_password
 
+  app-redis:
+    image: redis
+    expose:
+      - "6379"
+
 secrets:
   database_name:
     file: ./secrets/DATABASE_NAME

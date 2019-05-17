@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { getSecrets } from '../common/secrets'
+import { set } from './asyncRedis'
 
 const updateVesselLocations = async () => {
   const secrets = await getSecrets()
@@ -10,8 +11,9 @@ const updateVesselLocations = async () => {
   )
 
   const vesselStatusAfterUpdate = response.data
-  console.log(vesselStatusAfterUpdate)
+  await set('vesselLocations', vesselStatusAfterUpdate)
 }
+
 try {
   updateVesselLocations()
 } catch (error) {

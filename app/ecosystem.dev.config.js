@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'server',
       script: './node_modules/.bin/ts-node',
-      args: '--project tsconfig.json ./server/index.ts',
+      args: './server/index.ts',
       watch: './server/**/*',
       env: {
         NODE_ENV: 'development',
@@ -13,14 +13,11 @@ module.exports = {
       },
     },
     {
+      // instead of running off of a cron_restart trigger like in prod, we'll simple watch for change in dev (at least for now)
       name: 'ingestor',
       script: './node_modules/.bin/ts-node',
-      args: '--project tsconfig.json ./ingestor/index.ts',
-      instances: 1,
-      exec_mode: 'fork',
-      cron_restart: '*/20 * * * * *',
+      args: './ingestor/index.ts',
       watch: './ingestor/**/*',
-      autorestart: false,
       env: {
         NODE_ENV: 'development',
       },

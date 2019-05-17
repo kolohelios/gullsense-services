@@ -11,6 +11,7 @@
     "datetime",
     "ingestor",
     "key",
+    "mariadb",
     "mmsi",
     "promisify",
     "treeshake",
