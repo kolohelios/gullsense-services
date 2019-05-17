@@ -4,13 +4,17 @@
   "editor.tabSize": 2,
   "cSpell.words": [
     "api",
+    "autorestart",
     "bignumber",
     "binance",
     "coinbase",
+    "datetime",
     "ingestor",
     "key",
+    "mmsi",
     "promisify",
     "treeshake",
-    "typeorm"
+    "typeorm",
+    "wsdot"
   ]
 }

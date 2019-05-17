@@ -11,6 +11,7 @@ services:
     secrets:
       - database_name
       - database_password
+      - wsdot_api_key
 
   app-db:
     image: mariadb
@@ -28,3 +29,5 @@ secrets:
     file: ./secrets/DATABASE_NAME
   database_password:
     file: ./secrets/DATABASE_PASSWORD
+  wsdot_api_key:
+    file: ./secrets/WSDOT_API_KEY

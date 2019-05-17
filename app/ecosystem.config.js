@@ -2,9 +2,23 @@ module.exports = {
   apps: [
     {
       name: 'server',
-      // script: './node_modules/.bin/ts-node',
-      script: './build/compiled/server.js',
-      // args: './ingestor/index.ts',
+      script: './build/server.js',
+      env: {
+        NODE_ENV: 'development',
+      },
+      exec_mode: 'cluster',
+      env_production: {
+        NODE_ENV: 'production',
+      },
+    },
+    {
+      name: 'ingestor',
+      script: './build/ingestor.js',
+      instances: 1,
+      exec_mode: 'fork',
+      cron_restart: '*/20 * * * * *',
+      watch: false,
+      autorestart: false,
       env: {
         NODE_ENV: 'development',
       },
