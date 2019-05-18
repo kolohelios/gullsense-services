@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { getSecrets } from '../common/secrets'
-import { set } from './asyncRedis'
+import { set } from '../common/asyncRedis'
+import { scheduleJob } from 'node-schedule'
 
 const updateVesselLocations = async () => {
   const secrets = await getSecrets()
@@ -14,8 +15,6 @@ const updateVesselLocations = async () => {
   await set('vesselLocations', vesselStatusAfterUpdate)
 }
 
-try {
-  updateVesselLocations()
-} catch (error) {
-  throw new Error(error)
-}
+const everyTwentySeconds = '*/20 * * * * *'
+
+scheduleJob(everyTwentySeconds, updateVesselLocations)

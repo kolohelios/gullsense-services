@@ -2,9 +2,7 @@ import * as fs from 'fs'
 import { promisify } from 'util'
 
 const readFileAsync = promisify(fs.readFile)
-
 const secrets: { [index: string]: string } = {}
-
 const secretKeys = ['database_name', 'database_password', 'wsdot_api_key']
 
 const getSecrets = async (): Promise<typeof secrets> => {

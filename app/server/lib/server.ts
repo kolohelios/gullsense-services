@@ -1,12 +1,16 @@
 import * as Hapi from '@hapi/hapi'
 import fourOhFour from './plugins/endpoints/index'
+import locations from './plugins/endpoints/raw/locations'
 import logging from './plugins/logging'
 
 const server = new Hapi.Server({
-  port: 8181,
+  // TODO HACK get the port number from env
+  port: 8080,
 })
 
+// TODO implement a fuse-box-friendly way of dynamically loading plugins
 fourOhFour(server)
+locations(server)
 logging(server)
 
 const init = async () => {

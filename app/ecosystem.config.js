@@ -14,11 +14,6 @@ module.exports = {
     {
       name: 'ingestor',
       script: './build/ingestor.js',
-      instances: 1,
-      exec_mode: 'fork',
-      cron_restart: '*/20 * * * * *',
-      watch: false,
-      autorestart: false,
       env: {
         NODE_ENV: 'development',
       },
